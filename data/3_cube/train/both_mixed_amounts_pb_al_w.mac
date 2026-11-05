@@ -1,0 +1,13 @@
+/geom/addCube 4 4 4 G4_Pb
+/geom/addCube 5 4 5 G4_Al
+/geom/addCube 3 3 6 G4_W
+/run/initialize
+/analysis/setFileName data/3_cube/train/both_mixed_amounts_pb_al_w
+/random/setSeeds 163664910 81832456
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 0
+/run/printProgress 10000
+/gun/particle proton
+/gun/energy 100 MeV
+/run/beamOn 100000

@@ -1,0 +1,12 @@
+/geom/addCube 4 4 4 G4_Cu
+/geom/addCube 5 5 4 G4_W
+/run/initialize
+/analysis/setFileName data/initial_train/beside_corner_cu_w
+/random/setSeeds 1473058983 736529492
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 0
+/run/printProgress 10000
+/gun/particle proton
+/gun/energy 100 MeV
+/run/beamOn 100000

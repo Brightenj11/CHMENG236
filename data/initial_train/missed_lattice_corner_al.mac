@@ -1,0 +1,11 @@
+/geom/addCube 8 8 4 G4_Al
+/run/initialize
+/analysis/setFileName data/initial_train/missed_lattice_corner_al
+/random/setSeeds 1669145561 834572781
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 0
+/run/printProgress 10000
+/gun/particle proton
+/gun/energy 100 MeV
+/run/beamOn 100000

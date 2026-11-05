@@ -1,0 +1,11 @@
+/geom/addCube 4 4 4 G4_Cu
+/run/initialize
+/analysis/setFileName data/initial_train/cu_center
+/random/setSeeds 1140385250 570192626
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 0
+/run/printProgress 10000
+/gun/particle proton
+/gun/energy 100 MeV
+/run/beamOn 100000

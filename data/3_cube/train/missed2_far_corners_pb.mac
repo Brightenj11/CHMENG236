@@ -1,0 +1,12 @@
+/geom/addCube 8 8 0 G4_Pb
+/geom/addCube 0 0 8 G4_Pb
+/run/initialize
+/analysis/setFileName data/initial_train/missed2_far_corners_pb
+/random/setSeeds 348917620 174458811
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 0
+/run/printProgress 10000
+/gun/particle proton
+/gun/energy 100 MeV
+/run/beamOn 100000

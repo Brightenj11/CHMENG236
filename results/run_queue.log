@@ -1,0 +1,216 @@
+start Thu Nov  5 08:59:03 PST 2026
+3_cube/test/both_staircase_pb_w_pb: done
+3_cube/test/both_staircase_w_al_cu: done
+3_cube/test/both_staircase_w_cu_al: done
+3_cube/test/both_staircase_w_cu_w: done
+3_cube/test/both_staircase_w_pb_cu: done
+train      347, val       49, test      104, line3 outside test        0
+3_cube training Thu Nov  5 09:31:00 PST 2026
+347 train, 49 val and 104 test geometries on cpu
+baseline val loss 10.0157
+epoch    1   train loss 9.6203   val loss 7.2359
+epoch   25   train loss 1.5611   val loss 2.5111
+epoch   50   train loss 1.6074   val loss 2.4719
+epoch   75   train loss 0.9753   val loss 1.9839
+epoch  100   train loss 1.0057   val loss 2.8160
+epoch  125   train loss 0.9269   val loss 2.0321
+epoch  150   train loss 0.8848   val loss 2.4319
+epoch  175   train loss 0.8942   val loss 2.6415
+epoch  200   train loss 0.8603   val loss 2.4367
+epoch  225   train loss 0.8450   val loss 2.6095
+epoch  250   train loss 0.8191   val loss 2.5088
+epoch  275   train loss 0.8249   val loss 2.4167
+epoch  300   train loss 0.7996   val loss 2.4018
+
+Log-space RMSE per bin (lower is better, 0.69 is about a factor of 2):
+  train     proton   energy 0.697   angle 0.873
+  train     neutron  energy 0.249   angle 0.231
+  val       proton   energy 1.470   angle 1.187
+  val       neutron  energy 0.813   angle 0.758
+  test      proton   energy 1.125   angle 1.370
+  test      neutron  energy 0.365   angle 0.353
+  baseline  proton   energy 1.492   angle 2.343
+  baseline  neutron  energy 0.789   angle 0.741
+
+Test results by group:
+2-cube lines (4 geometries)
+  model     proton   energy 1.480   angle 1.481
+  model     neutron  energy 0.466   angle 0.465
+  baseline  proton   energy 2.204   angle 2.278
+  baseline  neutron  energy 0.521   angle 0.477
+  mean error in total neutrons: model 27.9%   baseline 27.8%
+3 cubes in a line (64 geometries)
+  model     proton   energy 1.175   angle 1.502
+  model     neutron  energy 0.369   angle 0.362
+  baseline  proton   energy 1.318   angle 2.383
+  baseline  neutron  energy 0.615   angle 0.563
+  mean error in total neutrons: model 17.2%   baseline 35.7%
+unseen corner offset (12 geometries)
+  model     proton   energy 1.231   angle 1.121
+  model     neutron  energy 0.258   angle 0.278
+  baseline  proton   energy 2.007   angle 2.431
+  baseline  neutron  energy 0.725   angle 0.706
+  mean error in total neutrons: model 10.5%   baseline 49.9%
+unseen staircase offset (24 geometries)
+  model     proton   energy 0.823   angle 1.057
+  model     neutron  energy 0.381   angle 0.343
+  baseline  proton   energy 1.481   angle 2.196
+  baseline  neutron  energy 1.174   angle 1.115
+  mean error in total neutrons: model 5.8%   baseline 136.6%
+
+Neutrons per incident proton, test geometries (from the energy output):
+  geometry                         Geant4    model  baseline
+  al_pb                             0.232    0.116     0.149
+  both_staircase_al_al_cu           0.027    0.025     0.149
+  both_staircase_al_cu_w            0.029    0.026     0.149
+  both_staircase_al_pb_cu           0.028    0.029     0.149
+  both_staircase_al_pb_w            0.028    0.028     0.149
+  both_staircase_al_w_al            0.028    0.029     0.149
+  both_staircase_al_w_pb            0.029    0.026     0.149
+  both_staircase_cu_al_cu           0.120    0.115     0.149
+  both_staircase_cu_al_w            0.118    0.113     0.149
+  both_staircase_cu_cu_w            0.115    0.118     0.149
+  both_staircase_cu_pb_al           0.115    0.107     0.149
+  both_staircase_cu_pb_cu           0.119    0.108     0.149
+  both_staircase_cu_pb_w            0.119    0.114     0.149
+  both_staircase_pb_al_pb           0.256    0.212     0.149
+  both_staircase_pb_al_w            0.253    0.203     0.149
+  both_staircase_pb_cu_pb           0.245    0.228     0.149
+  both_staircase_pb_cu_w            0.251    0.237     0.149
+  both_staircase_pb_pb_al           0.257    0.233     0.149
+  both_staircase_pb_pb_cu           0.251    0.234     0.149
+  both_staircase_pb_w_al            0.252    0.252     0.149
+  both_staircase_pb_w_pb            0.249    0.235     0.149
+  both_staircase_w_al_cu            0.312    0.302     0.149
+  both_staircase_w_cu_al            0.311    0.301     0.149
+  both_staircase_w_cu_w             0.306    0.310     0.149
+  both_staircase_w_pb_cu            0.307    0.306     0.149
+  cu_al                             0.126    0.102     0.149
+  cu_w                              0.164    0.224     0.149
+  line3_al_al_al                    0.077    0.046     0.149
+  line3_al_al_cu                    0.111    0.057     0.149
+  line3_al_al_pb                    0.159    0.069     0.149
+  line3_al_al_w                     0.166    0.114     0.149
+  line3_al_cu_al                    0.123    0.065     0.149
+  line3_al_cu_cu                    0.122    0.078     0.149
+  line3_al_cu_pb                    0.126    0.094     0.149
+  line3_al_cu_w                     0.127    0.144     0.149
+  line3_al_pb_al                    0.232    0.103     0.149
+  line3_al_pb_cu                    0.236    0.144     0.149
+  line3_al_pb_pb                    0.234    0.152     0.149
+  line3_al_pb_w                     0.230    0.189     0.149
+  line3_al_w_al                     0.238    0.232     0.149
+  line3_al_w_cu                     0.237    0.236     0.149
+  line3_al_w_pb                     0.235    0.240     0.149
+  line3_al_w_w                      0.227    0.241     0.149
+  line3_cu_al_al                    0.130    0.094     0.149
+  line3_cu_al_cu                    0.132    0.115     0.149
+  line3_cu_al_pb                    0.127    0.142     0.149
+  line3_cu_al_w                     0.129    0.201     0.149
+  line3_cu_cu_al                    0.145    0.130     0.149
+  line3_cu_cu_cu                    0.142    0.125     0.149
+  line3_cu_cu_pb                    0.141    0.145     0.149
+  line3_cu_cu_w                     0.144    0.190     0.149
+  line3_cu_pb_al                    0.160    0.159     0.149
+  line3_cu_pb_cu                    0.160    0.170     0.149
+  line3_cu_pb_pb                    0.165    0.188     0.149
+  line3_cu_pb_w                     0.162    0.226     0.149
+  line3_cu_w_al                     0.165    0.222     0.149
+  line3_cu_w_cu                     0.167    0.230     0.149
+  line3_cu_w_pb                     0.164    0.234     0.149
+  line3_cu_w_w                      0.163    0.237     0.149
+  line3_pb_al_al                    0.272    0.210     0.149
+  line3_pb_al_cu                    0.275    0.228     0.149
+  line3_pb_al_pb                    0.272    0.244     0.149
+  line3_pb_al_w                     0.275    0.254     0.149
+  line3_pb_cu_al                    0.290    0.255     0.149
+  line3_pb_cu_cu                    0.291    0.237     0.149
+  line3_pb_cu_pb                    0.279    0.252     0.149
+  line3_pb_cu_w                     0.285    0.268     0.149
+  line3_pb_pb_al                    0.304    0.273     0.149
+  line3_pb_pb_cu                    0.316    0.272     0.149
+  line3_pb_pb_pb                    0.317    0.275     0.149
+  line3_pb_pb_w                     0.307    0.285     0.149
+  line3_pb_w_al                     0.324    0.317     0.149
+  line3_pb_w_cu                     0.313    0.310     0.149
+  line3_pb_w_pb                     0.310    0.312     0.149
+  line3_pb_w_w                      0.303    0.315     0.149
+  line3_w_al_al                     0.303    0.289     0.149
+  line3_w_al_cu                     0.313    0.284     0.149
+  line3_w_al_pb                     0.314    0.293     0.149
+  line3_w_al_w                      0.315    0.273     0.149
+  line3_w_cu_al                     0.312    0.296     0.149
+  line3_w_cu_cu                     0.316    0.286     0.149
+  line3_w_cu_pb                     0.311    0.290     0.149
+  line3_w_cu_w                      0.310    0.285     0.149
+  line3_w_pb_al                     0.314    0.298     0.149
+  line3_w_pb_cu                     0.312    0.293     0.149
+  line3_w_pb_pb                     0.312    0.284     0.149
+  line3_w_pb_w                      0.310    0.283     0.149
+  line3_w_w_al                      0.309    0.303     0.149
+  line3_w_w_cu                      0.310    0.304     0.149
+  line3_w_w_pb                      0.309    0.307     0.149
+  line3_w_w_w                       0.304    0.303     0.149
+  offset_corner_al_al_cu            0.054    0.044     0.149
+  offset_corner_al_cu_w             0.127    0.086     0.149
+  offset_corner_al_w_pb             0.230    0.240     0.149
+  offset_corner_cu_cu_al            0.143    0.150     0.149
+  offset_corner_cu_pb_cu            0.160    0.185     0.149
+  offset_corner_pb_al_pb            0.270    0.201     0.149
+  offset_corner_pb_pb_al            0.315    0.297     0.149
+  offset_corner_pb_w_cu             0.310    0.328     0.149
+  offset_corner_w_al_pb             0.311    0.302     0.149
+  offset_corner_w_cu_al             0.309    0.300     0.149
+  offset_corner_w_pb_cu             0.319    0.302     0.149
+  offset_corner_w_w_pb              0.308    0.302     0.149
+  pb_cu                             0.286    0.269     0.149
+
+Saved /Users/brightenjiang/Documents/fall_2026/236/final project/plots/results/3_cube_training_curve.png
+
+Saved /Users/brightenjiang/Documents/fall_2026/236/final project/plots/results/3_cube_test_predictions.png
+off_axis training Thu Nov  5 11:47:36 PST 2026
+172 train, 20 val and 4 test geometries on cpu
+baseline val loss 14.6826
+epoch    1   train loss 14.7972   val loss 9.3038
+epoch   25   train loss 1.4592   val loss 2.1829
+epoch   50   train loss 1.1662   val loss 2.0011
+epoch   75   train loss 1.0987   val loss 1.6586
+epoch  100   train loss 1.2158   val loss 1.7319
+epoch  125   train loss 0.8239   val loss 2.4044
+epoch  150   train loss 0.8295   val loss 1.8496
+epoch  175   train loss 0.8137   val loss 2.7934
+epoch  200   train loss 0.7560   val loss 2.0814
+epoch  225   train loss 0.7316   val loss 2.0268
+epoch  250   train loss 0.6747   val loss 2.2240
+epoch  275   train loss 0.6544   val loss 3.1040
+epoch  300   train loss 0.6315   val loss 2.6255
+
+Log-space RMSE per bin (lower is better, 0.69 is about a factor of 2):
+  train     proton   energy 0.591   angle 0.726
+  train     neutron  energy 0.273   angle 0.257
+  val       proton   energy 1.378   angle 1.341
+  val       neutron  energy 0.956   angle 0.800
+  test      proton   energy 1.435   angle 1.298
+  test      neutron  energy 0.342   angle 0.360
+  baseline  proton   energy 2.255   angle 2.364
+  baseline  neutron  energy 0.595   angle 0.546
+
+Test results by group:
+2-cube lines (4 geometries)
+  model     proton   energy 1.435   angle 1.298
+  model     neutron  energy 0.342   angle 0.360
+  baseline  proton   energy 2.255   angle 2.364
+  baseline  neutron  energy 0.595   angle 0.546
+  mean error in total neutrons: model 16.4%   baseline 30.9%
+
+Neutrons per incident proton, test geometries (from the energy output):
+  geometry                         Geant4    model  baseline
+  al_pb                             0.232    0.175     0.129
+  cu_al                             0.126    0.138     0.129
+  cu_w                              0.164    0.206     0.129
+  pb_cu                             0.286    0.271     0.129
+
+Saved /Users/brightenjiang/Documents/fall_2026/236/final project/plots/results/off_axis_training_curve.png
+
+Saved /Users/brightenjiang/Documents/fall_2026/236/final project/plots/results/off_axis_test_predictions.png
+FINISHED Thu Nov  5 12:31:21 PST 2026

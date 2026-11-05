@@ -1,0 +1,13 @@
+/geom/addCube 4 4 2 G4_Al
+/geom/addCube 4 4 3 G4_Al
+/geom/addCube 5 5 3 G4_Cu
+/run/initialize
+/analysis/setFileName data/symmetry_check/offset_corner_al_al_cu_shifted
+/random/setSeeds 913869679 456934840
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 0
+/run/printProgress 10000
+/gun/particle proton
+/gun/energy 100 MeV
+/run/beamOn 100000

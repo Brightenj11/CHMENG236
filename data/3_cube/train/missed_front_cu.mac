@@ -1,0 +1,11 @@
+/geom/addCube 5 4 1 G4_Cu
+/run/initialize
+/analysis/setFileName data/initial_train/missed_front_cu
+/random/setSeeds 339208436 169604219
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 0
+/run/printProgress 10000
+/gun/particle proton
+/gun/energy 100 MeV
+/run/beamOn 100000

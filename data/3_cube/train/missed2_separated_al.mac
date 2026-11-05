@@ -1,0 +1,12 @@
+/geom/addCube 5 4 2 G4_Al
+/geom/addCube 5 4 7 G4_Al
+/run/initialize
+/analysis/setFileName data/initial_train/missed2_separated_al
+/random/setSeeds 2114110806 1057055404
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 0
+/run/printProgress 10000
+/gun/particle proton
+/gun/energy 100 MeV
+/run/beamOn 100000

@@ -77,6 +77,20 @@ def voxelize(cubes):
     return grid
 
 
+def transform_cubes(cubes, quarter_turns=0, mirror=False, z_shift=0):
+    """Move a cube list by a symmetry of the setup: mirror x, then turn around the beam, then shift
+    along it. Matches symmetry.rotate on voxel grids, which symmetry.py checks."""
+    last = LATTICE_SIZE - 1
+    moved = []
+    for i, j, k, material in cubes:
+        if mirror:
+            i = last - i
+        for _ in range(quarter_turns):
+            i, j = last - j, i
+        moved.append((i, j, k + z_shift, material))
+    return moved
+
+
 def spectra(hits, primaries):
     """Return energy (2, ENERGY_BINS) and angle (2, ANGLE_BINS) yields per incident proton per bin.
 

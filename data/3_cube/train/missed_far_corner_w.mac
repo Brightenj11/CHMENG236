@@ -1,0 +1,11 @@
+/geom/addCube 6 6 4 G4_W
+/run/initialize
+/analysis/setFileName data/initial_train/missed_far_corner_w
+/random/setSeeds 1879712632 939856317
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 0
+/run/printProgress 10000
+/gun/particle proton
+/gun/energy 100 MeV
+/run/beamOn 100000

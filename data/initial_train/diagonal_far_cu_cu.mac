@@ -1,0 +1,12 @@
+/geom/addCube 4 4 4 G4_Cu
+/geom/addCube 5 4 6 G4_Cu
+/run/initialize
+/analysis/setFileName data/initial_train/diagonal_far_cu_cu
+/random/setSeeds 1719462665 859731333
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 0
+/run/printProgress 10000
+/gun/particle proton
+/gun/energy 100 MeV
+/run/beamOn 100000

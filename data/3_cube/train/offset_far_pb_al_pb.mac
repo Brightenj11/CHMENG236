@@ -1,0 +1,13 @@
+/geom/addCube 4 4 4 G4_Pb
+/geom/addCube 4 4 5 G4_Al
+/geom/addCube 8 4 5 G4_Pb
+/run/initialize
+/analysis/setFileName data/3_cube/train/offset_far_pb_al_pb
+/random/setSeeds 1867602162 933801082
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 0
+/run/printProgress 10000
+/gun/particle proton
+/gun/energy 100 MeV
+/run/beamOn 100000

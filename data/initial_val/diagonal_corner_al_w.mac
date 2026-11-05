@@ -1,0 +1,12 @@
+/geom/addCube 4 4 4 G4_Al
+/geom/addCube 5 5 5 G4_W
+/run/initialize
+/analysis/setFileName data/initial_val/diagonal_corner_al_w
+/random/setSeeds 894684122 447342062
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 0
+/run/printProgress 10000
+/gun/particle proton
+/gun/energy 100 MeV
+/run/beamOn 100000
