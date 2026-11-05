@@ -1,0 +1,21 @@
+# 100 MeV protons on 1 cm cubes, inside a spherical detector (theta = 0 to 180 deg).
+# Run in batch: ./exampleB1 run1.mac
+#
+# Cubes must come before /run/initialize: i j k material, with i, j, k from 0 to 8.
+# Repeat the line to add cubes. Position 4 4 4 is the center, and 4 4 * is on the beam axis.
+/geom/addCube 4 4 4 G4_Al
+#
+/run/initialize
+#
+# Output name: <name>_nt_hits*.csv
+/analysis/setFileName particles
+#
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 0
+/run/printProgress 10000
+#
+/gun/particle proton
+/gun/energy 100 MeV
+#
+/run/beamOn 100000

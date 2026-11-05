@@ -1,0 +1,9 @@
+#class tools::wcsv::ntuple
+#title Protons and neutrons entering the detector
+#separator 44
+#vector_separator 59
+#column int event
+#column string particle
+#column double energy_MeV
+#column double theta_deg
+#column double phi_deg

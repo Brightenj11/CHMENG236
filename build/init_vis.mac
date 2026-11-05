@@ -1,0 +1,19 @@
+# Macro file for the initialization of example B1
+# in interactive session
+#
+# Set some default verbose
+/control/verbose 2
+/control/saveHistory
+/run/verbose 2
+#
+# Change the default number of threads (in multi-threaded mode)
+#/run/numberOfThreads 4
+#
+# Cubes to show: i j k material
+/geom/addCube 4 4 4 G4_Al
+#
+# Initialize kernel
+/run/initialize
+#
+# Visualization setting
+/control/execute vis.mac

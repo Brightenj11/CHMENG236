@@ -1,0 +1,3 @@
+/Users/brightenjiang/Documents/fall_2026/236/final project/build/CMakeFiles/exampleB1.dir
+/Users/brightenjiang/Documents/fall_2026/236/final project/build/CMakeFiles/edit_cache.dir
+/Users/brightenjiang/Documents/fall_2026/236/final project/build/CMakeFiles/rebuild_cache.dir
