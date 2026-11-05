@@ -5,14 +5,11 @@ Run this file to check the models: python models.py
 import torch
 from torch import nn
 
-# Output format. The bins must match ENERGY_BINS and THETA_BINS in plot_particles.py.
-PARTICLES = ("proton", "neutron")
-ENERGY_BINS = 100  # 1 MeV bins, 0-100 MeV
-ANGLE_BINS = 90  # 1 degree bins, 0-90 degrees from the beam axis
+from dataset import ANGLE_BINS, ENERGY_BINS, GRID_SIZE, PARTICLES
 
 
 def conv_block(in_channels, out_channels):
-    """Two 3D convolutions, then halve the grid size."""
+    """Two 3D convolutions."""
     return nn.Sequential(
         nn.Conv3d(in_channels, out_channels, kernel_size=3, padding=1),
         nn.GroupNorm(8, out_channels),  # unlike BatchNorm, works with very small batches
@@ -20,14 +17,13 @@ def conv_block(in_channels, out_channels):
         nn.Conv3d(out_channels, out_channels, kernel_size=3, padding=1),
         nn.GroupNorm(8, out_channels),
         nn.ReLU(),
-        nn.MaxPool3d(2),
     )
 
 
 class VoxelCNN(nn.Module):
     """3D-CNN from a voxel grid to energy spectra and angular distributions.
 
-    Input: tensor of shape (batch, 2, x, y, z), where z is the beam axis and the beam passes
+    Input: tensor of shape (batch, 2, 36, 36, 36), where z is the beam axis and the beam passes
     through the center of the x-y plane. Channel 0 is density in g/cm^3 and channel 1 is atomic
     number Z, both in physical units and both 0 for vacuum. Voxels must be the same physical size
     in every sample, because the network has no other way to know how big an object is.
@@ -44,15 +40,18 @@ class VoxelCNN(nn.Module):
         self.register_buffer("input_scale", torch.tensor([10.0, 100.0]).view(1, 2, 1, 1, 1))
         self.features = nn.Sequential(
             conv_block(2, 16),
+            nn.MaxPool3d(2),  # 36 -> 18
             conv_block(16, 32),
+            nn.MaxPool3d(2),  # 18 -> 9
             conv_block(32, 64),
-            # Flatten a coarse grid instead of averaging it all away. The beam runs through one
-            # fixed place, so where the material sits relative to that axis matters.
-            nn.AdaptiveAvgPool3d(4),
+            # 9 -> 3, so nothing is dropped and the middle cell sits on the beam axis. Flatten this
+            # coarse grid instead of averaging it all away, because where the material sits
+            # relative to the beam matters.
+            nn.AvgPool3d(3),
             nn.Flatten(),
         )
         self.shared = nn.Sequential(
-            nn.Linear(64 * 4**3, 512),
+            nn.Linear(64 * 3**3, 512),
             nn.ReLU(),
             nn.Dropout(dropout),
         )
@@ -69,23 +68,19 @@ class VoxelCNN(nn.Module):
 if __name__ == "__main__":
     model = VoxelCNN().eval()
 
-    # 32^3 grids: one Al block, an Al block followed by a lead block, and an off-axis Al block
-    al = torch.tensor([2.70, 13.0]).view(2, 1, 1, 1)  # density in g/cm^3, Z
+    # One Al cube, an Al cube followed by a lead cube, and an off-axis Al cube
+    al = torch.tensor([2.699, 13.0]).view(2, 1, 1, 1)  # density in g/cm^3, Z
     pb = torch.tensor([11.35, 82.0]).view(2, 1, 1, 1)
-    voxels = torch.zeros(3, 2, 32, 32, 32)
-    voxels[0, :, 12:20, 12:20, 12:20] = al
-    voxels[1, :, 12:20, 12:20, 4:8] = al
-    voxels[1, :, 12:20, 12:20, 20:24] = pb
-    voxels[2, :, 0:8, 0:8, 12:20] = al  # same as sample 0 but moved off the beam axis
+    voxels = torch.zeros(3, 2, GRID_SIZE, GRID_SIZE, GRID_SIZE)
+    voxels[0, :, 16:20, 16:20, 16:20] = al
+    voxels[1, :, 16:20, 16:20, 16:20] = al
+    voxels[1, :, 16:20, 16:20, 20:24] = pb
+    voxels[2, :, 0:4, 0:4, 16:20] = al
 
     with torch.no_grad():
         energy, angle = model(voxels)
     assert energy.shape == (3, 2, ENERGY_BINS), energy.shape
     assert angle.shape == (3, 2, ANGLE_BINS), angle.shape
     assert not torch.allclose(energy[0], energy[2]), "model can't see position relative to the beam"
-
-    # Other grid sizes work too
-    energy, angle = model(torch.zeros(1, 2, 24, 24, 48))
-    assert energy.shape == (1, 2, ENERGY_BINS) and angle.shape == (1, 2, ANGLE_BINS)
 
     print(f"OK: VoxelCNN has {sum(p.numel() for p in model.parameters()):,} parameters")
