@@ -1,0 +1,61 @@
+104 test geometries, 2496 moved copies
+
+No symmetry (current 3_cube model): 1 seed(s), mean ± spread across seeds
+  group                      measure        proton energy     proton angle   neutron energy    neutron angle
+  all                        original       1.125 ± 0.000    1.370 ± 0.000    0.365 ± 0.000    0.353 ± 0.000
+  all                        moved          2.232 ± 0.000    2.482 ± 0.000    3.114 ± 0.000    2.988 ± 0.000
+  all                        consistency    1.616 ± 0.000    1.578 ± 0.000    2.044 ± 0.000    1.938 ± 0.000
+  2-cube lines               original       1.480 ± 0.000    1.481 ± 0.000    0.466 ± 0.000    0.465 ± 0.000
+  2-cube lines               moved          3.039 ± 0.000    2.837 ± 0.000    3.989 ± 0.000    3.812 ± 0.000
+  2-cube lines               consistency    1.499 ± 0.000    1.478 ± 0.000    2.258 ± 0.000    2.154 ± 0.000
+  3 cubes in a line          original       1.175 ± 0.000    1.502 ± 0.000    0.369 ± 0.000    0.362 ± 0.000
+  3 cubes in a line          moved          1.997 ± 0.000    2.352 ± 0.000    2.830 ± 0.000    2.715 ± 0.000
+  3 cubes in a line          consistency    1.578 ± 0.000    1.523 ± 0.000    1.836 ± 0.000    1.739 ± 0.000
+  unseen corner offset       original       1.231 ± 0.000    1.121 ± 0.000    0.258 ± 0.000    0.278 ± 0.000
+  unseen corner offset       moved          2.564 ± 0.000    2.493 ± 0.000    3.798 ± 0.000    3.660 ± 0.000
+  unseen corner offset       consistency    1.445 ± 0.000    1.493 ± 0.000    2.311 ± 0.000    2.205 ± 0.000
+  unseen staircase offset    original       0.823 ± 0.000    1.057 ± 0.000    0.381 ± 0.000    0.343 ± 0.000
+  unseen staircase offset    moved          2.474 ± 0.000    2.738 ± 0.000    3.288 ± 0.000    3.148 ± 0.000
+  unseen staircase offset    consistency    1.805 ± 0.000    1.766 ± 0.000    2.365 ± 0.000    2.238 ± 0.000
+
+Augmentation: 3 seed(s), mean ± spread across seeds
+  group                      measure        proton energy     proton angle   neutron energy    neutron angle
+  all                        original       1.240 ± 0.104    1.446 ± 0.200    0.443 ± 0.077    0.399 ± 0.069
+  all                        moved          1.238 ± 0.106    1.460 ± 0.215    0.452 ± 0.077    0.412 ± 0.073
+  all                        consistency    0.173 ± 0.030    0.223 ± 0.022    0.126 ± 0.031    0.120 ± 0.031
+  2-cube lines               original       1.871 ± 0.161    1.674 ± 0.167    0.477 ± 0.019    0.457 ± 0.024
+  2-cube lines               moved          1.908 ± 0.154    1.702 ± 0.173    0.501 ± 0.023    0.480 ± 0.020
+  2-cube lines               consistency    0.181 ± 0.048    0.278 ± 0.082    0.137 ± 0.058    0.129 ± 0.052
+  3 cubes in a line          original       1.194 ± 0.101    1.562 ± 0.235    0.427 ± 0.054    0.394 ± 0.054
+  3 cubes in a line          moved          1.183 ± 0.106    1.572 ± 0.260    0.434 ± 0.062    0.402 ± 0.063
+  3 cubes in a line          consistency    0.155 ± 0.056    0.195 ± 0.013    0.067 ± 0.007    0.063 ± 0.007
+  unseen corner offset       original       1.586 ± 0.208    1.295 ± 0.201    0.334 ± 0.052    0.331 ± 0.060
+  unseen corner offset       moved          1.606 ± 0.184    1.341 ± 0.196    0.346 ± 0.058    0.348 ± 0.068
+  unseen corner offset       consistency    0.168 ± 0.026    0.247 ± 0.013    0.092 ± 0.016    0.087 ± 0.015
+  unseen staircase offset    original       0.995 ± 0.146    1.111 ± 0.090    0.516 ± 0.144    0.429 ± 0.118
+  unseen staircase offset    moved          0.996 ± 0.131    1.116 ± 0.084    0.528 ± 0.129    0.452 ± 0.110
+  unseen staircase offset    consistency    0.200 ± 0.021    0.255 ± 0.079    0.212 ± 0.088    0.203 ± 0.088
+
+Canonicalization: 3 seed(s), mean ± spread across seeds
+  group                      measure        proton energy     proton angle   neutron energy    neutron angle
+  all                        original       1.135 ± 0.010    1.310 ± 0.051    0.438 ± 0.005    0.396 ± 0.008
+  all                        moved          1.135 ± 0.010    1.310 ± 0.051    0.438 ± 0.005    0.396 ± 0.008
+  all                        consistency    0.000 ± 0.000    0.000 ± 0.000    0.000 ± 0.000    0.000 ± 0.000
+  2-cube lines               original       1.789 ± 0.082    1.732 ± 0.082    0.545 ± 0.095    0.523 ± 0.083
+  2-cube lines               moved          1.789 ± 0.082    1.732 ± 0.082    0.545 ± 0.095    0.523 ± 0.083
+  2-cube lines               consistency    0.000 ± 0.000    0.000 ± 0.000    0.000 ± 0.000    0.000 ± 0.000
+  3 cubes in a line          original       1.059 ± 0.053    1.395 ± 0.081    0.453 ± 0.016    0.413 ± 0.017
+  3 cubes in a line          moved          1.059 ± 0.053    1.395 ± 0.081    0.453 ± 0.016    0.413 ± 0.017
+  3 cubes in a line          consistency    0.000 ± 0.000    0.000 ± 0.000    0.000 ± 0.000    0.000 ± 0.000
+  unseen corner offset       original       1.527 ± 0.145    1.133 ± 0.026    0.346 ± 0.017    0.332 ± 0.011
+  unseen corner offset       moved          1.527 ± 0.145    1.133 ± 0.026    0.346 ± 0.017    0.332 ± 0.011
+  unseen corner offset       consistency    0.000 ± 0.000    0.000 ± 0.000    0.000 ± 0.000    0.000 ± 0.000
+  unseen staircase offset    original       0.932 ± 0.054    1.047 ± 0.010    0.417 ± 0.023    0.350 ± 0.012
+  unseen staircase offset    moved          0.932 ± 0.054    1.047 ± 0.010    0.417 ± 0.023    0.350 ± 0.012
+  unseen staircase offset    consistency    0.000 ± 0.000    0.000 ± 0.000    0.000 ± 0.000    0.000 ± 0.000
+
+Geant4 check: neutron spectra of moved geometries vs the original (log-space RMSE per bin)
+Rotated and shifted should match reseeded, which is the same geometry with new random numbers.
+  both_staircase_al_al_cu     rotated 0.677 (total +0.6%)  shifted 0.657 (total +6.5%)  reseeded 0.821 (total -0.6%)
+  line3_al_pb_cu              rotated 0.343 (total -1.7%)  shifted 0.293 (total -0.2%)  reseeded 0.351 (total -1.4%)
+  offset_corner_al_al_cu      rotated 0.503 (total -2.9%)  shifted 0.564 (total -2.6%)  reseeded 0.467 (total +2.1%)
