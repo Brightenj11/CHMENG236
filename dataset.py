@@ -34,6 +34,7 @@ MATERIALS = {
     "G4_Cu": (8.96, 29),
     "G4_W": (19.3, 74),
     "G4_Pb": (11.35, 82),
+    "G4_Ag": (10.5, 47),  # never in training: the unseen-material test
 }
 
 
